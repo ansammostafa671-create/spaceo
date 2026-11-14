@@ -1,0 +1,112 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: radial-gradient(circle at center, #1b0f3a 0%, #080314 100%);
+    color: #ffffff;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.game-container {
+    width: 90vw;
+    height: 85vh;
+    border: 2px solid #b026ff;
+    border-radius: 12px;
+    background: rgba(15, 8, 35, 0.85);
+    box-shadow: 0 0 25px rgba(176, 38, 255, 0.5);
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #4a0e83;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.game-header h1 {
+    font-size: 1.5rem;
+    color: #00d2ff;
+    text-shadow: 0 0 10px rgba(0, 210, 255, 0.7);
+}
+
+.screen {
+    display: none;
+    flex-grow: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.screen.active {
+    display: flex;
+}
+
+.neon-btn, .nav-btn, .item-btn {
+    background: transparent;
+    color: #00d2ff;
+    border: 2px solid #00d2ff;
+    padding: 12px 24px;
+    margin: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(0, 210, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+.neon-btn:hover, .nav-btn:hover, .item-btn:hover {
+    background: #00d2ff;
+    color: #080314;
+    box-shadow: 0 0 20px rgba(0, 210, 255, 0.8);
+}
+
+.mission-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 350px;
+}
+
+.panel {
+    background: rgba(26, 11, 58, 0.9);
+    border: 1px solid #b026ff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(176, 38, 255, 0.4);
+    max-width: 600px;
+    width: 100%;
+}
+
+.rules-list {
+    text-align: left;
+    margin: 20px 0;
+    line-height: 1.6;
+    padding-left: 20px;
+}
+
+.timer {
+    font-size: 2.5rem;
+    color: #00ffcc;
+    margin: 20px 0;
+    font-family: monospace;
+    text-shadow: 0 0 10px rgba(0, 255, 204, 0.7);
+}
+
+.stars {
+    font-size: 2rem;
+    margin: 15px 0;
+}

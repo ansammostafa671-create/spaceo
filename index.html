@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPACEO - Mission Architect</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Main Container -->
+    <div class="game-container">
+        
+        <!-- Header -->
+        <header class="game-header">
+            <button class="nav-btn" onclick="showScreen('menu-screen')">&lt; MAIN MENU</button>
+            <h1 id="screen-title">SPACEO - MISSION ARCHITECT</h1>
+            <button class="nav-btn" onclick="showScreen('rules-screen')">HOW TO PLAY</button>
+        </header>
+
+        <!-- 1. MAIN MENU SCREEN -->
+        <div id="menu-screen" class="screen active">
+            <div class="menu-content">
+                <h2>CHOOSE YOUR MISSION</h2>
+                <div class="mission-buttons">
+                    <button class="neon-btn" onclick="startMission(1)">MISSION 01: EYES ON CLIMATE</button>
+                    <button class="neon-btn" onclick="startMission(2)">MISSION 02: WATER ON THE MOON</button>
+                    <button class="neon-btn" onclick="startMission(3)">MISSION 03: UNDER EUROPA'S ICE</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. HOW TO PLAY / RULES SCREEN -->
+        <div id="rules-screen" class="screen">
+            <div class="panel">
+                <h2>HOW TO PLAY: SPACEO</h2>
+                <ul class="rules-list">
+                    <li><strong>1. Choose Mission:</strong> Select one of three scientific space missions.</li>
+                    <li><strong>2. Assembly Phase:</strong> Build your probe keeping in mind Budget ($), Mass (kg), and Power limits.</li>
+                    <li><strong>3. Pre-Flight Check:</strong> ATLAS AI will run diagnostics to verify your engineering constraints.</li>
+                    <li><strong>4. Mission Report:</strong> Earn Science Points and Stars on success, or read ATLAS diagnostic reports on failure.</li>
+                </ul>
+                <button class="neon-btn" onclick="showScreen('menu-screen')">BACK TO MENU</button>
+            </div>
+        </div>
+
+        <!-- 3. ASSEMBLY SCREEN -->
+        <div id="assembly-screen" class="screen">
+            <div class="workspace">
+                <div class="panel">
+                    <h3>COMPONENTS</h3>
+                    <button class="item-btn" onclick="selectComponent('Falcon Heavy', 15000, 20)">Falcon Heavy ($20M)</button>
+                    <button class="item-btn" onclick="selectComponent('REASON Radar', 50, 5)">REASON Radar ($5M)</button>
+                    <button class="item-btn" onclick="selectComponent('RTG Power', 10, 10)">RTG Power ($10M)</button>
+                </div>
+                <div class="preview-box">
+                    <h3 id="active-mission-label">MISSION ASSEMBLY</h3>
+                    <div id="build-status">Selected: Falcon Heavy, Radar, RTG</div>
+                    <button class="neon-btn" onclick="showScreen('check-screen')">PROCEED TO CHECK &amp; LAUNCH</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. CHECK & LAUNCH SCREEN -->
+        <div id="check-screen" class="screen">
+            <div class="panel">
+                <h3>ATLAS AI DIAGNOSTIC REPORT</h3>
+                <p id="diagnostic-text">Status: ALL SYSTEMS GREEN - READY FOR LAUNCH ✅</p>
+                <div class="timer">00:10:00</div>
+                <button class="neon-btn launch-active" onclick="showScreen('report-screen')">LAUNCH SEQUENCE ACTIVE</button>
+            </div>
+        </div>
+
+        <!-- 5. MISSION REPORT SCREEN -->
+        <div id="report-screen" class="screen">
+            <div class="panel report-panel">
+                <h2 id="report-title">MISSION REPORT: SUCCESS!</h2>
+                <div class="stars">⭐⭐⭐</div>
+                <h3 id="science-score">SCIENCE SCORE: +60 PTS</h3>
+                <p id="atlas-diagnostic">ATLAS AI: Optimal configuration! Data link established successfully.</p>
+                <div class="report-actions">
+                    <button class="neon-btn" onclick="showScreen('menu-screen')">CHOOSE MISSION</button>
+                    <button class="neon-btn" onclick="startMission(currentMission)">RETRY MISSION</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
